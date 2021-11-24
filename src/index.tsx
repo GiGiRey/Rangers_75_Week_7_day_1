@@ -3,18 +3,26 @@ import ReactDOM from 'react-dom';
 import { Home, Dashboard, SignIn } from './components';
 import reportWebVitals from './reportWebVitals';
 import './styles.css';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <Router>
-      <Routes>
-        <Route path='/' element={ <Home title = {'Ranger Cars'}/>}/>
-        <Route path='/Dashboard' element={ <Dashboard/>}/>
-        <Route path='/SignIn' element={ <SignIn/>}/>       
-      </Routes>
+    <Switch>
+        <Route exact path='/'>
+          <Home title={'Car Collection'}/>
+        </Route>
+        <Route path='/dashboard'>
+          <Dashboard></Dashboard>
+        </Route>
+        <Route path='/signin'>
+          <SignIn></SignIn>
+        </Route>
+
+      </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

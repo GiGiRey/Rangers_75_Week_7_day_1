@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {DataTable} from '../../components';
 
 export const SignIn = () => {
     return (
@@ -6,6 +7,7 @@ export const SignIn = () => {
             <h1>
                 SignIn
             </h1>
+            <DataTable/>
         </div>
     )
 }
